@@ -46,7 +46,10 @@ const ProductForm = ({ onSuccess }) => {
     }
     try {
       const token = localStorage.getItem('token');
-      await axios.post('http://localhost:3000/products', formValues, {
+      const API_URL = 'https://magic-log-marketplace.onrender.com';
+      //await axios.post('http://localhost:3000/products', formValues, {
+    
+      await axios.post(`${API_URL}/products`, formValues, {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,
