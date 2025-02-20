@@ -24,7 +24,9 @@ const LoginPage = () => {
   // Función de login
   const handleLogin = async () => {
     try {
-      const response = await axios.post('http://localhost:3000/auth/login', { email, password });
+      const API_URL = 'https://magic-log-marketplace.onrender.com';
+      //const response = await axios.post('http://localhost:3000/auth/login', { email, password });
+      const response = await axios.post(`${API_URL}/products`,{ email, password });
       const token = response.data.access_token;
       localStorage.setItem('token', token);
       const decoded = jwtDecode(token);
