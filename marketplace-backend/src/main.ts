@@ -6,7 +6,7 @@ async function bootstrap() {
 
   // Configuración de CORS
   app.enableCors({
-    origin: 'https://magic-log-marketplace-eight.vercel.app/',
+    origin: ['https://magic-log-marketplace-eight.vercel.app/'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Métodos HTTP permitidos
     allowedHeaders: ['Content-Type', 'Authorization'], // Encabezados permitidos
     credentials: true, // Permitir cookies y autenticación
