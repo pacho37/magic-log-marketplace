@@ -15,9 +15,12 @@ const AdminPage = () => {
         setLoading(true);
         try {
             const token = localStorage.getItem('token');
+            const API_URL = 'https://magic-log-marketplace.onrender.com';
             const url = sellerIdFilter
-                ? `http://localhost:3000/admin/products?sellerId=${sellerIdFilter}`
-                : `http://localhost:3000/admin/products`;
+                //? `http://localhost:3000/admin/products?sellerId=${sellerIdFilter}`
+                //: `http://localhost:3000/admin/products`;
+                ? `${API_URL}/admin/products?sellerId=${sellerIdFilter}`
+                : `${API_URL}/admin/products`;
             const response = await axios.get(url, {
                 headers: { Authorization: `Bearer ${token}` },
             });

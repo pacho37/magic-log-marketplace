@@ -30,7 +30,10 @@ const BuyerPage = () => {
       if (filters.minPrice !== undefined) queryParams.push(`minPrice=${filters.minPrice}`);
       if (filters.maxPrice !== undefined) queryParams.push(`maxPrice=${filters.maxPrice}`);
       const queryString = queryParams.length > 0 ? '?' + queryParams.join('&') : '';
-      const response = await axios.get(`http://localhost:3000/products/search${queryString}`, {
+
+      const API_URL = 'https://magic-log-marketplace.onrender.com';
+      //const response = await axios.get(`http://localhost:3000/products/search${queryString}`, {
+      const response = await axios.get(`${API_URL}/products/search${queryString}`, {  
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
       });
       setProducts(response.data);

@@ -55,7 +55,10 @@ const LoginPage = () => {
     }
     setRegisterError('');
     try {
-      const response = await axios.post('http://localhost:3000/auth/register', {
+
+      //const response = await axios.post('http://localhost:3000/auth/register', {
+        const API_URL = 'https://magic-log-marketplace.onrender.com';
+        const response = await axios.post(`${API_URL}/auth/register`,{ 
         name: registerName,
         email: registerEmail,
         password: registerPassword,
